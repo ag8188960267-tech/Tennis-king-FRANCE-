@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tennis King (FRANCE) - Premium Tennis Analysis</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- ========================================== -->
+    <!-- META PIXEL CODE START -->
+    <!-- ========================================== -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4459904847622734'); // Tumhara Pixel ID yahan set ho gaya hai
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=4459904847622734&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- ========================================== -->
+    <!-- META PIXEL CODE END -->
+    <!-- ========================================== -->
+
+    <!-- Telegram Click Tracking Script -->
+    <script>
+    function trackTelegramClick() {
+        fbq('track', 'Lead', {
+            content_name: 'Telegram Join Button',
+            content_category: 'Community'
+        });
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -14,7 +47,6 @@
         }
 
         body {
-            /* नॉर्मल डार्क बैकग्राउंड */
             background-color: #0f172a; 
             color: #ffffff;
             display: flex;
@@ -24,9 +56,7 @@
             padding: 20px;
         }
 
-        /* मुख्य कार्ड कंटेनर */
         .card-container {
-            /* सिंपल और साफ कार्ड बैकग्राउंड */
             background: #1e293b; 
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
@@ -37,7 +67,6 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        /* हेडर सेक्शन */
         .title {
             font-size: 24px;
             font-weight: 800;
@@ -48,12 +77,11 @@
 
         .subtitle {
             font-size: 14px;
-            color: #38bdf8; /* सिंपल स्काई ब्लू कलर */
+            color: #38bdf8; 
             margin-bottom: 24px;
             font-weight: 500;
         }
 
-        /* प्रोफ़ाइल और बैज सेक्शन */
         .profile-section {
             display: flex;
             align-items: center;
@@ -65,8 +93,6 @@
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        /* इमेज सेक्शन पूरी तरह हटा दिया गया है */
 
         .badges {
             display: flex;
@@ -87,7 +113,7 @@
         }
 
         .badge-premium {
-            background: #eab308; /* गोल्ड/येलो प्रीमियम लुक के लिए */
+            background: #eab308; 
             color: #000000;
         }
 
@@ -108,13 +134,12 @@
             100% { opacity: 0.6; }
         }
 
-        /* टेलीग्राम बटन */
         .btn-telegram {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: #0ea5e9; /* टेलीग्राम स्टैंडर्ड ब्लू कलर */
+            background: #0ea5e9; 
             color: white;
             text-decoration: none;
             font-size: 18px;
@@ -130,7 +155,6 @@
             transform: translateY(-2px);
         }
 
-        /* फ़ीचर लिस्ट */
         .features-list {
             display: flex;
             flex-direction: column;
@@ -175,7 +199,6 @@
             color: #94a3b8;
         }
 
-        /* फ़ुटर */
         .footer-text {
             font-size: 11px;
             color: #64748b;
@@ -196,7 +219,8 @@
             </div>
         </div>
 
-        <a href="https://t.me" class="btn-telegram" target="_blank">
+        <!-- Is button par click karte hi ab Lead event track hoga -->
+        <a href="https://t.me" onclick="trackTelegramClick()" class="btn-telegram" target="_blank">
             <i class="fa-brands fa-telegram"></i> JOIN TELEGRAM NOW
         </a>
 
