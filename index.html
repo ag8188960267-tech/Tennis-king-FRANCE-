@@ -7,25 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <!-- ========================================== -->
-    <!-- META PIXEL CODE (AUTOMATIC TRACKING READY) -->
+    <!-- ZERO-JAVASCRIPT AUTOMATIC PIXEL (PAGEVIEW) -->
     <!-- ========================================== -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '4459904847622734'); // Aapka Pixel ID
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=4459904847622734&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- ========================================== -->
-    <!-- META PIXEL CODE END -->
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=4459904847622734&ev=PageView&noscript=1" />
     <!-- ========================================== -->
 
     <style>
@@ -102,21 +87,9 @@
             gap: 6px;
         }
 
-        .badge-premium {
-            background: #eab308; 
-            color: #000000;
-        }
-
-        .badge-live {
-            background: #ef4444;
-            color: #ffffff;
-            animation: blink 1.5s infinite;
-        }
-
-        .badge-members {
-            background: rgba(255, 255, 255, 0.1);
-            color: #cbd5e1;
-        }
+        .badge-premium { background: #eab308; color: #000000; }
+        .badge-live { background: #ef4444; color: #ffffff; animation: blink 1.5s infinite; }
+        .badge-members { background: rgba(255, 255, 255, 0.1); color: #cbd5e1; }
 
         @keyframes blink {
             0% { opacity: 0.6; }
@@ -124,7 +97,6 @@
             100% { opacity: 0.6; }
         }
 
-        /* Pure HTML Button - Super Safe for Ads */
         .btn-telegram {
             display: flex;
             align-items: center;
@@ -210,8 +182,8 @@
             </div>
         </div>
 
-        <!-- Id aur class name bilkul clear hai taaki Meta Event Tool ise turant pehchan sake -->
-        <a href="https://t.me" id="telegram-button" class="btn-telegram" target="_blank">
+        <!-- YEH DEKHO: Jab koi click karega, bina JS ke automatic "Lead" track karne ke liye Meta Image Server hit hoga -->
+        <a href="https://t.me" class="btn-telegram" target="_blank" onclick="new Image().src='https://www.facebook.com/tr?id=4459904847622734&ev=Lead&noscript=1';">
             <i class="fa-brands fa-telegram"></i> JOIN TELEGRAM NOW
         </a>
 
