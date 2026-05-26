@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <!-- ========================================== -->
-    <!-- META PIXEL CODE START -->
+    <!-- META PIXEL CODE (AUTOMATIC TRACKING READY) -->
     <!-- ========================================== -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -18,7 +18,7 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '4459904847622734'); 
+    fbq('init', '4459904847622734'); // Aapka Pixel ID
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -27,22 +27,6 @@
     <!-- ========================================== -->
     <!-- META PIXEL CODE END -->
     <!-- ========================================== -->
-
-    <!-- Error Free Tracking Script -->
-    <script>
-    function trackTelegramClick() {
-        try {
-            // Standard tracking event
-            fbq('track', 'Lead', {
-                content_name: 'Telegram Join Button',
-                content_category: 'Community'
-            });
-        } catch(err) {
-            console.log('Pixel error caught:', err);
-        }
-        return true; // Yeh true return karega taaki link normal tarike se bina ruke khul sake
-    }
-    </script>
 
     <style>
         * {
@@ -140,6 +124,7 @@
             100% { opacity: 0.6; }
         }
 
+        /* Pure HTML Button - Super Safe for Ads */
         .btn-telegram {
             display: flex;
             align-items: center;
@@ -225,8 +210,8 @@
             </div>
         </div>
 
-        <!-- Ab yeh normal HTML link hai, isme pop-up ya redirection block hone ka koi scene nahi hai -->
-        <a href="https://t.me" onclick="return trackTelegramClick();" class="btn-telegram" target="_blank">
+        <!-- Id aur class name bilkul clear hai taaki Meta Event Tool ise turant pehchan sake -->
+        <a href="https://t.me" id="telegram-button" class="btn-telegram" target="_blank">
             <i class="fa-brands fa-telegram"></i> JOIN TELEGRAM NOW
         </a>
 
