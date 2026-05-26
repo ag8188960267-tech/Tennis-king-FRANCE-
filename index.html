@@ -1,22 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>☄️𝗧𝗜𝗣𝗣𝗜𝗡𝗚 𝗧𝗢𝗦𝗦 𝗟𝗢𝗔𝗗☄️ - Premium Cricket Tips</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<style>
-body{min-height:100vh;background:#020617;color:white;display:flex;justify-content:center;align-items:center;}
-.logo{width:150px;height:150px;border-radius:50%;border:4px solid gold;box-shadow:0 0 20px gold;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis King (FRANCE) - Premium Tennis Analysis</title>
+    <!-- FontAwesome Icons के लिए लिंक -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #14231a, #090f0b); /* प्रीमियम टेनिस डार्क ग्रीन थीम */
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* मुख्य कार्ड कंटेनर */
+        .card-container {
+            background: rgba(20, 32, 25, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(163, 230, 53, 0.2); /* टेनिस बॉल नियॉन बॉर्डर */
+            border-radius: 24px;
+            width: 100%;
+            max-width: 450px;
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* हेडर सेक्शन */
+        .title {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #a3e635; /* नियॉन ग्रीन कलर */
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        /* प्रोफ़ाइल और बैज सेक्शन */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            background: rgba(10, 15, 12, 0.8);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 24px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .profile-img {
+            width: 75px;
+            height: 75px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-right: 16px;
+            border: 2px solid #ef4444; /* रेड डेविल लोगो से मैच करता हुआ बॉर्डर */
+        }
+
+        .badges {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .badge {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-premium {
+            background: #a3e635;
+            color: #000000;
+        }
+
+        .badge-live {
+            background: #ef4444;
+            color: #ffffff;
+            animation: blink 1.5s infinite;
+        }
+
+        .badge-members {
+            background: rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        /* मुख्य टेलीग्राम बटन */
+        .btn-telegram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff4e3a, #ff2a14); /* आपकी ओरिजिनल इमेज जैसा ब्राइट रेड बटन */
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(255, 78, 58, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-telegram:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(255, 78, 58, 0.4);
+        }
+
+        /* फ़ीचर लिस्ट */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            padding: 14px 18px;
+            text-align: left;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 16px;
+        }
+
+        .icon-tennis { background: rgba(163, 230, 53, 0.15); color: #a3e635; }
+        .icon-analytics { background: rgba(14, 165, 233, 0.15); color: #0ea5e9; }
+        .icon-community { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+
+        .feature-text .main-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .feature-text .sub-text {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* पाद लेख */
+        .footer-text {
+            font-size: 11px;
+            color: #64748b;
+        }
+    </style>
 </head>
 <body>
-<div style="text-align:center;">
-<img src="logo.jpg" class="logo"><br><br>
-<h1>☄️𝗧𝗜𝗣𝗣𝗜𝗡𝗚 𝗧𝗢𝗦𝗦 𝗟𝗢𝗔𝗗☄️</h1>
-<a href="https://t.me/+H2J8cLAqpbgxN2I1">JOIN TELEGRAM</a>
-</div>
+
+    <div class="card-container">
+        <!-- चैनल का नाम और विवरण -->
+        <h1 class="title">Tennis king 🎾 ( FRANCE )</h1>
+        <p class="subtitle">Premium Tennis Analysis & Predictions</p>
+
+        <!-- प्रोफ़ाइल सेक्शन -->
+        <div class="profile-section">
+            <!-- नोट: इस इमेज लिंक को अपनी लाइव अपलोडेड इमेज के यूआरएल से बदल सकते हैं -->
+            <img src="https://ibb.co" alt="Tennis King Logo" class="profile-img" onerror="this.src='https://unsplash.com'">
+            <div class="badges">
+                <span class="badge badge-premium"><i class="fa-solid fa-crown"></i> Tennis King</span>
+                <span class="badge badge-live"><i class="fa-solid fa-circle"></i> Live Match Tips</span>
+                <span class="badge badge-members"><i class="fa-solid fa-users"></i> 39.6k+ Subscribers</span>
+            </div>
+        </div>
+
+        <!-- मुख्य टेलीग्राम बटन (आपका सटीक लिंक यहाँ जोड़ दिया है) -->
+        <a href="https://t.me" class="btn-telegram" target="_blank">
+            <i class="fa-brands fa-telegram"></i> JOIN TELEGRAM NOW
+        </a>
+
+        <!-- फ़ीचर्स सूची -->
+        <div class="features-list">
+            <!-- फ़ीचर 1 -->
+            <div class="feature-item">
+                <div class="feature-icon icon-tennis">
+                    <i class="fa-solid fa-baseball"></i>
+                </div>
+                <div class="feature-text">
+                    <div class="main-text">Expert Tennis Analysis</div>
+                    <div class="sub-text">In-depth statistics and player forms</div>
+                </div>
+            </div>
+
+            <!-- फ़ीचर 2 -->
+            <div class="feature-item">
+                <div class="feature-icon icon-analytics">
+                    <i class="fa-solid fa-square-check"></i>
+                </div>
+                <div class="feature-text">
+                    <div class="main-text">Guaranteed By</div>
+                    <div class="sub-text">Verified insights by @Panddat</div>
+                </div>
+            </div>
+
+            <!-- फ़ीचर 3 -->
+            <div class="feature-item">
+                <div class="feature-icon icon-community">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div class="feature-text">
+                    <div class="main-text">Real-time Coverage</div>
+                    <div class="sub-text">Special updates on French & International leagues</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- पाद लेख -->
+        <p class="footer-text">For entertainment purposes only.</p>
+    </div>
+
 </body>
 </html>
