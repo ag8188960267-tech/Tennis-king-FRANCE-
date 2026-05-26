@@ -28,22 +28,19 @@
     <!-- META PIXEL CODE END -->
     <!-- ========================================== -->
 
-    <!-- New & Improved Tracking Script -->
+    <!-- Error Free Tracking Script -->
     <script>
-    function trackTelegramClick(event) {
-        // 1. Pehle normal click ko rokenge taaki data loss na ho
-        event.preventDefault(); 
-        
-        // 2. Meta ko Lead event bhejenge
-        fbq('track', 'Lead', {
-            content_name: 'Telegram Join Button',
-            content_category: 'Community'
-        });
-
-        // 3. Chota sa delay (100ms) taaki Pixel data chala jaye, fir Telegram open hoga
-        setTimeout(function() {
-            window.open("https://t.me", "_blank"); // <-- Yahan apna poora telegram link daal dena
-        }, 100);
+    function trackTelegramClick() {
+        try {
+            // Standard tracking event
+            fbq('track', 'Lead', {
+                content_name: 'Telegram Join Button',
+                content_category: 'Community'
+            });
+        } catch(err) {
+            console.log('Pixel error caught:', err);
+        }
+        return true; // Yeh true return karega taaki link normal tarike se bina ruke khul sake
     }
     </script>
 
@@ -157,7 +154,6 @@
             border-radius: 14px;
             margin-bottom: 20px;
             transition: background 0.2s, transform 0.2s;
-            cursor: pointer;
         }
 
         .btn-telegram:hover {
@@ -229,8 +225,8 @@
             </div>
         </div>
 
-        <!-- Yahan tracking function ko event pass kiya hai -->
-        <a href="https://t.me" onclick="trackTelegramClick(event)" class="btn-telegram">
+        <!-- Ab yeh normal HTML link hai, isme pop-up ya redirection block hone ka koi scene nahi hai -->
+        <a href="https://t.me" onclick="return trackTelegramClick();" class="btn-telegram" target="_blank">
             <i class="fa-brands fa-telegram"></i> JOIN TELEGRAM NOW
         </a>
 
