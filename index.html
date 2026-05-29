@@ -1,339 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis King (FRANCE) - Premium Tennis Analysis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1365227775665232');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1365227775665232&ev=PageView&noscript=1"
+    /></noscript>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<title>Tennis King (FRANCE) - Premium Tennis Analysis</title>
+        body {
+            background-color: #0f172a; 
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        .card-container {
+            background: #1e293b; 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 450px;
+            padding: 30px 24px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;
-n.push=n;
-n.loaded=!0;
-n.version='2.0';
-n.queue=[];
-t=b.createElement(e);
-t.async=!0;
-t.src=v;
-s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}
-(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+        .title {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
 
-fbq('init', '1365227775665232');
-fbq('track', 'PageView');
+        .subtitle {
+            font-size: 14px;
+            color: #38bdf8; 
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
 
-/* AUTO BUTTON TRACKING */
-document.addEventListener("DOMContentLoaded", function () {
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0f172a;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 24px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-    const telegramBtn = document.querySelector(".btn-telegram");
+        .badges {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+        }
 
-    if (telegramBtn) {
+        .badge {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-        telegramBtn.addEventListener("click", function (e) {
+        .badge-premium { background: #eab308; color: #000000; }
+        .badge-live { background: #ef4444; color: #ffffff; animation: blink 1.5s infinite; }
+        .badge-members { background: rgba(255, 255, 255, 0.1); color: #cbd5e1; }
 
-            e.preventDefault();
+        @keyframes blink {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
 
-            fbq('track', 'Contact');
+        .btn-telegram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #0ea5e9; 
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            transition: background 0.2s, transform 0.2s;
+        }
 
-            setTimeout(() => {
-                window.open(this.href, '_blank');
-            }, 300);
+        .btn-telegram:hover {
+            background: #0284c7;
+            transform: translateY(-2px);
+        }
 
-        });
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
 
-    }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            padding: 14px 18px;
+            text-align: left;
+        }
 
-});
-</script>
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 16px;
+        }
 
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1365227775665232&ev=PageView&noscript=1"/>
-</noscript>
+        .icon-tennis { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+        .icon-analytics { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+        .icon-community { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
 
-<style>
+        .feature-text .main-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-}
+        .feature-text .sub-text {
+            font-size: 12px;
+            color: #94a3b8;
+        }
 
-body{
-background-color:#0f172a;
-color:#ffffff;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:20px;
-}
-
-.card-container{
-background:#1e293b;
-border:1px solid rgba(255,255,255,0.1);
-border-radius:24px;
-width:100%;
-max-width:450px;
-padding:30px 24px;
-text-align:center;
-box-shadow:0 20px 40px rgba(0,0,0,0.3);
-}
-
-.title{
-font-size:24px;
-font-weight:800;
-letter-spacing:0.5px;
-margin-bottom:6px;
-color:#ffffff;
-}
-
-.subtitle{
-font-size:14px;
-color:#38bdf8;
-margin-bottom:24px;
-font-weight:500;
-}
-
-.profile-section{
-display:flex;
-align-items:center;
-justify-content:center;
-background:#0f172a;
-border-radius:16px;
-padding:16px;
-margin-bottom:24px;
-text-align:center;
-border:1px solid rgba(255,255,255,0.05);
-}
-
-.badges{
-display:flex;
-flex-direction:column;
-gap:8px;
-align-items:center;
-}
-
-.badge{
-font-size:12px;
-font-weight:700;
-padding:6px 14px;
-border-radius:20px;
-width:fit-content;
-display:flex;
-align-items:center;
-gap:6px;
-}
-
-.badge-premium{
-background:#eab308;
-color:#000000;
-}
-
-.badge-live{
-background:#ef4444;
-color:#ffffff;
-animation:blink 1.5s infinite;
-}
-
-.badge-members{
-background:rgba(255,255,255,0.1);
-color:#cbd5e1;
-}
-
-@keyframes blink{
-0%{opacity:0.6;}
-50%{opacity:1;}
-100%{opacity:0.6;}
-}
-
-.btn-telegram{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-background:#0ea5e9;
-color:white;
-text-decoration:none;
-font-size:18px;
-font-weight:700;
-padding:16px;
-border-radius:14px;
-margin-bottom:20px;
-transition:background 0.2s,transform 0.2s;
-}
-
-.btn-telegram:hover{
-background:#0284c7;
-transform:translateY(-2px);
-}
-
-.features-list{
-display:flex;
-flex-direction:column;
-gap:12px;
-margin-bottom:24px;
-}
-
-.feature-item{
-display:flex;
-align-items:center;
-background:rgba(255,255,255,0.02);
-border:1px solid rgba(255,255,255,0.05);
-border-radius:14px;
-padding:14px 18px;
-text-align:left;
-}
-
-.feature-icon{
-width:40px;
-height:40px;
-border-radius:10px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:18px;
-margin-right:16px;
-}
-
-.icon-tennis{
-background:rgba(56,189,248,0.15);
-color:#38bdf8;
-}
-
-.icon-analytics{
-background:rgba(34,197,94,0.15);
-color:#22c55e;
-}
-
-.icon-community{
-background:rgba(168,85,247,0.15);
-color:#a855f7;
-}
-
-.feature-text .main-text{
-font-size:15px;
-font-weight:600;
-color:#ffffff;
-margin-bottom:2px;
-}
-
-.feature-text .sub-text{
-font-size:12px;
-color:#94a3b8;
-}
-
-.footer-text{
-font-size:11px;
-color:#64748b;
-}
-
-</style>
+        .footer-text {
+            font-size: 11px;
+            color: #64748b;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="card-container">
+    <div class="card-container">
+        <h1 class="title">Tennis king 🎾 ( FRANCE )</h1>
+        <p class="subtitle">Premium Tennis Analysis & Predictions</p>
 
-<h1 class="title">Tennis king 🎾 ( FRANCE )</h1>
+        <div class="profile-section">
+            <div class="badges">
+                <span class="badge badge-premium"><i class="fa-solid fa-crown"></i> Tennis King</span>
+                <span class="badge badge-live"><i class="fa-solid fa-circle"></i> Live Match Tips</span>
+                <span class="badge badge-members"><i class="fa-solid fa-users"></i> 39.6k+ Subscribers</span>
+            </div>
+        </div>
 
-<p class="subtitle">
-Premium Tennis Analysis & Predictions
-</p>
+        <a href="https://t.me/+9k4amTNljjwyMTJl" class="btn-telegram" target="_blank" onclick="fbq('track', 'Contact');">
+            <i class="fa-brands fa-telegram"></i> JOIN TELEGRAM NOW
+        </a>
 
-<div class="profile-section">
+        <div class="features-list">
+            <div class="feature-item">
+                <div class="feature-icon icon-tennis">
+                    <i class="fa-solid fa-baseball"></i>
+                </div>
+                <div class="feature-text">
+                    <div class="main-text">Expert Tennis Analysis</div>
+                    <div class="sub-text">In-depth statistics and player forms</div>
+                </div>
+            </div>
 
-<div class="badges">
+            <div class="feature-item">
+                <div class="feature-icon icon-analytics">
+                    <i class="fa-solid fa-square-check"></i>
+                </div>
+                <div class="feature-text">
+                    <div class="main-text">Guaranteed By</div>
+                    <div class="sub-text">Verified insights by @Panddat</div>
+                </div>
+            </div>
 
-<span class="badge badge-premium">
-<i class="fa-solid fa-crown"></i>
-Tennis King
-</span>
+            <div class="feature-item">
+                <div class="feature-icon icon-community">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div class="feature-text">
+                    <div class="main-text">Real-time Coverage</div>
+                    <div class="sub-text">Special updates on French & International leagues</div>
+                </div>
+            </div>
+        </div>
 
-<span class="badge badge-live">
-<i class="fa-solid fa-circle"></i>
-Live Match Tips
-</span>
-
-<span class="badge badge-members">
-<i class="fa-solid fa-users"></i>
-39.6k+ Subscribers
-</span>
-
-</div>
-
-</div>
-
-<a href="https://t.me/+9k4amTNljjwyMTJl"
-class="btn-telegram">
-
-<i class="fa-brands fa-telegram"></i>
-JOIN TELEGRAM NOW
-
-</a>
-
-<div class="features-list">
-
-<div class="feature-item">
-
-<div class="feature-icon icon-tennis">
-<i class="fa-solid fa-baseball"></i>
-</div>
-
-<div class="feature-text">
-<div class="main-text">Expert Tennis Analysis</div>
-<div class="sub-text">
-In-depth statistics and player forms
-</div>
-</div>
-
-</div>
-
-<div class="feature-item">
-
-<div class="feature-icon icon-analytics">
-<i class="fa-solid fa-square-check"></i>
-</div>
-
-<div class="feature-text">
-<div class="main-text">Guaranteed By</div>
-<div class="sub-text">
-Verified insights by @Panddat
-</div>
-</div>
-
-</div>
-
-<div class="feature-item">
-
-<div class="feature-icon icon-community">
-<i class="fa-solid fa-bolt"></i>
-</div>
-
-<div class="feature-text">
-<div class="main-text">Real-time Coverage</div>
-<div class="sub-text">
-Special updates on French & International leagues
-</div>
-</div>
-
-</div>
-
-</div>
-
-<p class="footer-text">
-For entertainment purposes only.
-</p>
-
-</div>
+        <p class="footer-text">For entertainment purposes only.</p>
+    </div>
 
 </body>
 </html>
