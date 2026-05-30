@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tennis King (FRANCE) - Premium Tennis Analysis</title>
     
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
+    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -22,6 +24,21 @@
     <noscript>
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1365227775665232&ev=PageView&noscript=1"/>
     </noscript>
+
+    <!-- Smart Tracking JavaScript Function -->
+    <script>
+        function trackLeadAndRedirect(event, url) {
+            event.preventDefault(); // तुरंत रीडायरेक्ट होने से रोकें
+            
+            // Meta Pixel को Lead इवेंट भेजें
+            fbq('track', 'Lead');
+            
+            // 350 मिलीसेकंड का छोटा सा डिले ताकि पिक्सेल डेटा पूरी तरह सेंड हो जाए
+            setTimeout(function() {
+                window.open(url, '_blank');
+            }, 350);
+        }
+    </script>
 
     <style>
         * {
@@ -120,6 +137,7 @@
             border-radius: 14px;
             margin-bottom: 24px;
             transition: background 0.2s, transform 0.2s;
+            cursor: pointer;
         }
 
         .btn-telegram:hover {
@@ -191,7 +209,8 @@
             </div>
         </div>
 
-        <a href="https://t.me/+9k4amTNljjwyMTJl" class="btn-telegram" target="_blank" onclick="fbq('track', 'Lead');">
+        <!-- Smart Tracker Enabled Button -->
+        <a href="https://t.me/+9k4amTNljjwyMTJl" class="btn-telegram" onclick="trackLeadAndRedirect(event, this.href);">
             <i class="fa-brands fa-telegram"></i> JOIN TELEGRAM NOW
         </a>
 
